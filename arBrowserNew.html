@@ -1,0 +1,689 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content="initial-scale=1.0, user-scalable=no" name="viewport">
+   
+
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic'rel='stylesheet' type='text/css'>
+
+
+
+<!-- 
+ <script src="js/ade.js"></script>    
+ -->  
+
+<!-- load ARchitect libraries -->
+<script src="architect://architect.js"></script>
+<script src="js/content.js"></script>
+
+<script src="js/jquery.min.js"></script>
+
+<script>
+//trim method
+String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g, '');};
+
+
+//sends a page view (Project open, Target Views) to GA
+  function sendPosterView(page, title) {
+
+    console.log("sending:"+ page);
+
+
+ sendEvent("posters","view",page,page);
+
+    /*
+    ga('send', {
+      'hitType' : 'pageview',
+      'page' : page,
+      'title' : title
+    });
+*/
+  }
+
+
+//sends a page view (Project open, Target Views) to GA
+  function sendProjectView(page, title) {
+
+   // console.log("sending:"+ page);
+
+
+ //sendEvent("posters","view",page,page);
+
+    
+    ga('send', {
+      'hitType' : 'pageview',
+      'page' : page,
+      'title' : title
+    });
+
+  }
+
+  //sends a page view (Project open, Target Views) to GA
+  function sendPageView(page, title) {
+
+    console.log("sending:"+ page);
+
+
+ sendEvent("posters","view",page,page);
+
+    /*
+    ga('send', {
+      'hitType' : 'pageview',
+      'page' : page,
+      'title' : title
+    });
+*/
+  }
+
+
+
+
+/**GOOGLE ANALYTICS CODE**/
+
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments);
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(window, document, 'script', 'http://www.google-analytics.com/analytics_debug.js', 'ga');
+
+  ga('create', 'UA-80201408-1', {
+      'cookieDomain' : 'none',
+      'storage':'none'
+    });
+  ga('set', 'checkProtocolTask', null); 
+  ga('set', 'location', "http://www.analyticstester.com/");
+  ga('send','pageview');
+
+</script>
+
+
+ <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+ <script src="js/bootstrap.min.js"></script>
+
+
+<style>
+
+
+body,html
+
+{
+
+
+position: relative;
+	overflow-x: hidden;
+background:transparent;
+  height: 100%;
+   width:100%;
+    min-height: 100% !important;
+    min-width: 100% !important;
+}
+
+
+.intro-section {
+    position:absolute;
+    width:100%;
+    top:40%;
+    text-align: center;
+  
+}
+.point-section {
+    position:absolute;
+    width:100%;
+    top:95%;
+    text-align: center;
+  
+}
+
+
+
+.maincontainer{
+  float: left;
+  width:100%;
+  height:100%;
+  padding:30% 20%;
+    z-index:-1 !important;
+}
+
+
+
+
+#snapContainer {
+  width: 80%;
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -40%;
+  margin-left: -40%;
+  background: transparent;
+  background-repeat: no-repeat;
+    z-index:1 !important;
+   
+  background-position: center center;
+  opacity: .16;
+   -webkit-background-size:contain;
+   -webkit-transform:scale(1.3);
+               
+}
+
+#snapContainer:before {
+  content:"";
+  display: inline-block;
+  padding-top: 100%;
+}
+
+.touchcontrols{
+
+       border: 1px solid #000;
+    border-radius: 100%;
+    background-color: #555;
+    margin: 0px auto;
+    bottom: 10%;
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    width: 40%;
+    height: 145px;
+    text-align: center;
+    display: none;
+    z-index: 100 !important;
+    box-shadow: 0px 0px 8px 7px #000;
+
+    }
+
+
+
+#targetImageHolder
+{
+   position : absolute;
+    width    : 100%;
+    top      : 0px;
+}
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+
+    #snapContainer {
+    width: 60%;
+    -webkit-transform:scale(1.1);
+    overflow: hidden;
+    margin: 0px auto;
+    margin-top:-17%;
+    margin-left: -31.5%;
+    background: transparent;
+    padding-left:5%;
+    opacity: .016;
+    z-index:1;
+    -webkit-background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    }
+    }
+
+    
+
+
+
+
+
+    @media only screen
+    and (min-device-width: 480px)
+    and (max-device-width: 760px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+
+    #snapContainer {
+    width: 40%;
+    -webkit-transform:scale(1.1);
+    overflow: hidden;
+    margin: 0px auto;
+    margin-top:-17%;
+    margin-left: -22%;
+    background: transparent;
+    padding-left:5%;
+    opacity: .16;
+    z-index:10;
+    -webkit-background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    }
+    }
+
+
+   
+
+
+
+/** SNAP CLOSE BUTTON **/
+
+.snap-close {
+    position:absolute;
+    top:3%;
+    left:45%;
+    text-align: center;
+    display: block;
+    z-index: 100 !important;
+  
+}
+
+
+  
+.snap-screenshot {
+   position:absolute;
+   top:88%;
+   bottom:3%;
+   left:5%;
+   text-align: center;
+   display: block;
+   z-index: 100 !important;
+
+   }
+
+@media (orientation: landscape) {
+  
+.snap-close {
+    position:absolute;
+    top:4%;
+    left:45%;
+    text-align: center;
+    display: block;
+  z-index:100;
+}
+
+
+
+.snap-screenshot {
+   position:absolute;
+   top:79%;
+   bottom:5%;
+   left:5%;
+   text-align: center;
+   display: block;
+   z-index: 100 !important;
+
+   }
+  
+}
+
+
+
+
+
+</style>
+
+
+
+<script type="text/javascript">
+
+
+var current2DObject=undefined;
+
+  // load google analytics library for reporting your project data
+
+  
+
+
+
+
+  //sends an event (Augmentation click) to GA
+
+	function sendEvent(category, action, label, pageUrl) {
+		
+
+		ga('send', 'event', category, action, label, {
+			'page' : pageUrl
+		});
+
+
+	}
+
+
+	//sends a page view (Project open, Target Views) to GA
+	function sendPageView(page, title) {
+		
+		ga('send', {
+			'hitType' : 'pageview',
+			'page' : page,
+			'title' : title
+		});
+
+	}
+</script>
+
+<style>
+/* for the spinner indeed lol */
+.wrap {
+  position: relative;
+  top: 43%;
+  left: 43%;
+  margin: 0 auto;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border: 15px solid;
+  border-radius: 50%;
+  border-top-color: rgba(44,44,44,0);
+  border-right-color: rgba(55,55,55,0);
+  border-bottom-color: rgba(66,66,66,0);
+  border-left-color: rgba(33,33,33,0);
+  animation: loadEr 3s infinite;
+}
+
+@keyframes loadEr {
+  0% {
+    border-top-color: rgba(44,44,44,0);
+    border-right-color: rgba(55,55,55,0);
+    border-bottom-color: rgba(66,66,66,0);
+    border-left-color: rgba(33,33,33,0);
+
+  }
+  10.4% {
+    border-top-color: rgba(44,44,44,0.6);
+    border-right-color: rgba(55,55,55,0);
+    border-bottom-color: rgba(66,66,66,0);
+    border-left-color: rgba(33,33,33,0);
+  }
+  20.8% {
+    border-top-color: rgba(44,44,44,0);
+    border-right-color: rgba(55,55,55,0);
+    border-bottom-color: rgba(66,66,66,0);
+    border-left-color: rgba(33,33,33,0);
+  }
+31.2% {
+  border-top-color: rgba(44,44,44,0);
+    border-right-color: rgba(55,55,55,0.9);
+    border-bottom-color: rgba(66,66,66,0);
+    border-left-color: rgba(33,33,33,0);
+}
+41.6% {
+  border-top-color: rgba(44,44,44,0);
+    border-right-color: rgba(55,55,55,0);
+    border-bottom-color: rgba(66,66,66,0);
+    border-left-color: rgba(33,33,33,0);
+  transform: rotate(40deg);
+}
+52% {
+  border-top-color: rgba(44,44,44,0);
+    border-right-color: rgba(55,55,55,0);
+    border-bottom-color: rgba(66,66,66,0.9);
+    border-left-color: rgba(33,33,33,0);
+}
+62.4% {
+  border-top-color: rgba(44,44,44,0);
+    border-right-color: rgba(55,55,55,0);
+    border-bottom-color: rgba(66,66,66,0);
+    border-left-color: rgba(33,33,33,0);
+}
+72.8% {
+  border-top-color: rgba(44,44,44,0);
+    border-right-color: rgba(55,55,55,0);
+    border-bottom-color: rgba(66,66,66,0);
+    border-left-color: rgba(33,33,33,0.5);
+}
+}
+
+.loaderbefore {
+  width: 50px;
+  height:50px;
+  border: 15px solid #05897b;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 9;
+}
+
+.circular {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 70px;
+  height: 70px;
+  border: 20px solid #058992;
+  border-radius: 50%;
+  border-top-color: rgba(0,0,0,0);
+  border-left-color: #05897b;
+  border-bottom-color: rgba(0,0,0,0);
+  border-right-color: #05897b;
+  opacity: 0.4;
+  animation: poof 5s infinite;
+}
+@keyframes poof {
+  0% {transform: scale(1,1) rotate(0deg); opacity: 0.2;}
+  50% {transform: scale(4,4) rotate(360deg); opacity: 0;}
+}
+.another {
+  opacity: 0.8;
+  transform: rotate(90deg);
+  animation: poofity 5s infinite;
+  animation-delay: 1s;
+}
+@keyframes poofity {
+  0% {transform: scale(1,1) rotate(90deg); opacity: 0.1;}
+  50% {transform: scale(4,4) rotate(-360deg); opacity: 0;}
+}
+
+.text {
+  position: absolute;
+  top: 95px;
+  left: -38px;
+  font-family: Arial;
+  text-transform: uppercase;
+  color: #888;
+  animation: opaa 10s infinite;
+
+}
+@keyframes opaa {
+  0% {opacity: 1}
+10% {opacity: 0.5}
+15% {opacity: 1}
+30% {opacity: 1}
+65% {opacity: 0.3}
+90% {opacity: 0.8}
+}
+.text span {
+  color:transparent;
+  font-size:30px;
+  text-shadow:
+    0 -10px 2px rgba(204, 208, 212,0.9),
+    0 -10px 1px rgba(0, 0, 0, 0.1),
+    0 -9px 0px rgba(0, 0, 0, 0.3);
+    animation: loading 1s ease-in-out infinite alternate;
+}
+
+@keyframes loading {
+  to {text-shadow:
+    0 0 5px rgba(204, 208, 212,0.2),
+    0 0 5px rgba(0, 0, 0, 0.02),
+    0 0 1px rgba(0, 0, 0, 0);
+  }
+}
+
+.text span:nth-child(2){
+  animation-delay:0.15s;
+}
+.text span:nth-child(3){
+  animation-delay:0.30s;
+}
+.text span:nth-child(4){
+  animation-delay:0.45s;
+}
+.text span:nth-child(5){
+  animation-delay:0.60s;
+}
+.text span:nth-child(6){
+  animation-delay:0.75s;
+}
+.text span:nth-child(7){
+  animation-delay:0.90s;
+}
+
+
+.body{
+  background-image: url("bg.jpg");
+  width:100% 
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+ //for the spinner lol
+
+    !function(){function e(e,r){return[].slice.call((r||document).querySelectorAll(e))}if(window.addEventListener){var r=window.StyleFix={link:function(e){try{if("stylesheet"!==e.rel||e.hasAttribute("data-noprefix"))return}catch(t){return}var n,i=e.href||e.getAttribute("data-href"),a=i.replace(/[^\/]+$/,""),o=(/^[a-z]{3,10}:/.exec(a)||[""])[0],s=(/^[a-z]{3,10}:\/\/[^\/]+/.exec(a)||[""])[0],l=/^([^?]*)\??/.exec(i)[1],u=e.parentNode,p=new XMLHttpRequest;p.onreadystatechange=function(){4===p.readyState&&n()},n=function(){var t=p.responseText;if(t&&e.parentNode&&(!p.status||p.status<400||p.status>600)){if(t=r.fix(t,!0,e),a){t=t.replace(/url\(\s*?((?:"|')?)(.+?)\1\s*?\)/gi,function(e,r,t){return/^([a-z]{3,10}:|#)/i.test(t)?e:/^\/\//.test(t)?'url("'+o+t+'")':/^\//.test(t)?'url("'+s+t+'")':/^\?/.test(t)?'url("'+l+t+'")':'url("'+a+t+'")'});var n=a.replace(/([\\\^\$*+[\]?{}.=!:(|)])/g,"\\$1");t=t.replace(RegExp("\\b(behavior:\\s*?url\\('?\"?)"+n,"gi"),"$1")}var i=document.createElement("style");i.textContent=t,i.media=e.media,i.disabled=e.disabled,i.setAttribute("data-href",e.getAttribute("href")),u.insertBefore(i,e),u.removeChild(e),i.media=e.media}};try{p.open("GET",i),p.send(null)}catch(t){"undefined"!=typeof XDomainRequest&&(p=new XDomainRequest,p.onerror=p.onprogress=function(){},p.onload=n,p.open("GET",i),p.send(null))}e.setAttribute("data-inprogress","")},styleElement:function(e){if(!e.hasAttribute("data-noprefix")){var t=e.disabled;e.textContent=r.fix(e.textContent,!0,e),e.disabled=t}},styleAttribute:function(e){var t=e.getAttribute("style");t=r.fix(t,!1,e),e.setAttribute("style",t)},process:function(){e("style").forEach(StyleFix.styleElement),e("[style]").forEach(StyleFix.styleAttribute)},register:function(e,t){(r.fixers=r.fixers||[]).splice(void 0===t?r.fixers.length:t,0,e)},fix:function(e,t,n){for(var i=0;i<r.fixers.length;i++)e=r.fixers[i](e,t,n)||e;return e},camelCase:function(e){return e.replace(/-([a-z])/g,function(e,r){return r.toUpperCase()}).replace("-","")},deCamelCase:function(e){return e.replace(/[A-Z]/g,function(e){return"-"+e.toLowerCase()})}};!function(){setTimeout(function(){},10),document.addEventListener("DOMContentLoaded",StyleFix.process,!1)}()}}(),function(e){function r(e,r,n,i,a){if(e=t[e],e.length){var o=RegExp(r+"("+e.join("|")+")"+n,"gi");a=a.replace(o,i)}return a}if(window.StyleFix&&window.getComputedStyle){var t=window.PrefixFree={prefixCSS:function(e,n){var i=t.prefix;if(t.functions.indexOf("linear-gradient")>-1&&(e=e.replace(/(\s|:|,)(repeating-)?linear-gradient\(\s*(-?\d*\.?\d*)deg/gi,function(e,r,t,n){return r+(t||"")+"linear-gradient("+(90-n)+"deg"})),e=r("functions","(\\s|:|,)","\\s*\\(","$1"+i+"$2(",e),e=r("keywords","(\\s|:)","(\\s|;|\\}|$)","$1"+i+"$2$3",e),e=r("properties","(^|\\{|\\s|;)","\\s*:","$1"+i+"$2:",e),t.properties.length){var a=RegExp("\\b("+t.properties.join("|")+")(?!:)","gi");e=r("valueProperties","\\b",":(.+?);",function(e){return e.replace(a,i+"$1")},e)}return n&&(e=r("selectors","","\\b",t.prefixSelector,e),e=r("atrules","@","\\b","@"+i+"$1",e)),e=e.replace(RegExp("-"+i,"g"),"-"),e=e.replace(/-\*-(?=[a-z]+)/gi,t.prefix)},property:function(e){return(t.properties.indexOf(e)?t.prefix:"")+e},value:function(e){return e=r("functions","(^|\\s|,)","\\s*\\(","$1"+t.prefix+"$2(",e),e=r("keywords","(^|\\s)","(\\s|$)","$1"+t.prefix+"$2$3",e)},prefixSelector:function(e){return e.replace(/^:{1,2}/,function(e){return e+t.prefix})},prefixProperty:function(e,r){var n=t.prefix+e;return r?StyleFix.camelCase(n):n}};!function(){var e={},r=[],n=getComputedStyle(document.documentElement,null),i=document.createElement("div").style,a=function(t){if("-"===t.charAt(0)){r.push(t);var n=t.split("-"),i=n[1];for(e[i]=++e[i]||1;n.length>3;){n.pop();var a=n.join("-");o(a)&&-1===r.indexOf(a)&&r.push(a)}}},o=function(e){return StyleFix.camelCase(e)in i};if(n.length>0)for(var s=0;s<n.length;s++)a(n[s]);else for(var l in n)a(StyleFix.deCamelCase(l));var u={uses:0};for(var p in e){var f=e[p];u.uses<f&&(u={prefix:p,uses:f})}t.prefix="-"+u.prefix+"-",t.Prefix=StyleFix.camelCase(t.prefix),t.properties=[];for(var s=0;s<r.length;s++){var l=r[s];if(0===l.indexOf(t.prefix)){var c=l.slice(t.prefix.length);o(c)||t.properties.push(c)}}"Ms"!=t.Prefix||"transform"in i||"MsTransform"in i||!("msTransform"in i)||t.properties.push("transform","transform-origin"),t.properties.sort()}(),function(){function e(e,r){return i[r]="",i[r]=e,!!i[r]}var r={"linear-gradient":{property:"backgroundImage",params:"red, teal"},calc:{property:"width",params:"1px + 5%"},element:{property:"backgroundImage",params:"#foo"},"cross-fade":{property:"backgroundImage",params:"url(a.png), url(b.png), 50%"}};r["repeating-linear-gradient"]=r["repeating-radial-gradient"]=r["radial-gradient"]=r["linear-gradient"];var n={initial:"color","zoom-in":"cursor","zoom-out":"cursor",box:"display",flexbox:"display","inline-flexbox":"display",flex:"display","inline-flex":"display",grid:"display","inline-grid":"display","min-content":"width"};t.functions=[],t.keywords=[];var i=document.createElement("div").style;for(var a in r){var o=r[a],s=o.property,l=a+"("+o.params+")";!e(l,s)&&e(t.prefix+l,s)&&t.functions.push(a)}for(var u in n){var s=n[u];!e(u,s)&&e(t.prefix+u,s)&&t.keywords.push(u)}}(),function(){function r(e){return a.textContent=e+"{}",!!a.sheet.cssRules.length}var n={":read-only":null,":read-write":null,":any-link":null,"::selection":null},i={keyframes:"name",viewport:null,document:'regexp(".")'};t.selectors=[],t.atrules=[];var a=e.appendChild(document.createElement("style"));for(var o in n){var s=o+(n[o]?"("+n[o]+")":"");!r(s)&&r(t.prefixSelector(s))&&t.selectors.push(o)}for(var l in i){var s=l+" "+(i[l]||"");!r("@"+s)&&r("@"+t.prefix+s)&&t.atrules.push(l)}e.removeChild(a)}(),t.valueProperties=["transition","transition-property"],e.className+=" "+t.prefix,StyleFix.register(t.prefixCSS)}}(document.documentElement);
+
+  </script>
+
+
+
+
+
+</head>
+
+
+<body>
+
+<div class="maincontainer" id="maincontainer">
+<div id="snapContainer" >
+
+ </div>
+
+
+<div class="touchcontrols" id="touchcontrols">
+
+
+</div>
+
+</div>
+
+
+
+<section  id="scanner" class="intro-section" >
+        <div class="container">
+
+       
+          
+            <div class="row revanimator" >
+
+                <div class="col-xs-12" >
+
+                 <div class="wrap" >
+                     <!--       <div class="wrap1" style="display:table-cell;width:50%;margin:0px auto"><img alt="preloader" src="boxrotate.gif" style="width:auto;text-align:center;" /> </div>-->
+        <div class="loader"></div>
+  <div class="loaderbefore"></div>
+  <div class="circular"></div>
+  <div class="circular another"></div>
+
+</div></div>
+        </div>
+
+         </div>
+    </section> 
+
+
+
+
+<section id="intro1" class="point-section" >
+        <div class="container">
+            <div class="row" >
+
+                <div class="col-xs-12" >
+                  
+          <p style="color:white;font-family:'Source Sans Pro';" ><span id='initMessage'>Please Wait...</span></p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>  
+
+
+<div  class="snap-close" style="display:none;"><img style="width:35px;height:35px;" src="snapclose.png" /></div>
+
+
+<div  class="snap-screenshot" id="screenshotbutton"  style=""><img src="" /></div>
+
+
+
+
+
+
+
+
+	<script>
+	
+	
+
+
+//loading indicator
+
+
+var imageres = new AR.ImageResource("progressloader.png",{
+
+                                          onLoaded:function(width,height)
+                                          {
+                                            console.log(width+":"+height);
+                                          },
+                                          onError:function()
+                                          {
+                                            console.log("ouch");
+                                          }
+
+                                        });
+
+     var loadingDrawable = new AR.AnimatedImageDrawable(imageres, 0.3,  120,120);
+         loadingDrawable.zOrder=999999;
+     var keyframes=[];
+          for (var keyframer = 0; keyframer <=20; keyframer++)
+           {
+                keyframes.push(keyframer);                      
+
+           };
+
+//caching dictionary
+
+//var arTargets= new Array();
+
+
+//var snapCloseClass="snap-close";
+//var scanningDivID="scanner";
+
+
+
+
+
+
+	</script>
+
+
+	<script src="js/converternew.js"></script> 
+
+	<script>
+
+	var converter = new blueprint.Converter('473370');
+		converter.convertProject(project, {report : true});
+
+	</script>
+
+
+
+
+
+</body>
+</html>

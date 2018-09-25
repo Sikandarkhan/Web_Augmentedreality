@@ -1,0 +1,415 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content="initial-scale=1.0, user-scalable=no" name="viewport">
+   
+
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic'rel='stylesheet' type='text/css'>
+
+
+
+
+<!-- load ARchitect libraries -->
+
+<script src="js/jquery.min.js"></script>
+
+<script>
+//trim method
+String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g, '');};
+
+</script>
+
+
+ <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+ <script src="js/bootstrap.min.js"></script>
+
+
+<style>
+
+
+body,html
+
+{
+
+
+position: relative;
+	overflow-x: hidden;
+background:transparent;
+  height: 100%;
+   width:100%;
+    min-height: 100% !important;
+    min-width: 100% !important;
+}
+
+
+.intro-section {
+    position:absolute;
+    width:100%;
+    top:40%;
+    text-align: center;
+  
+}
+.point-section {
+    position:absolute;
+    width:100%;
+    top:95%;
+    text-align: center;
+  
+}
+
+
+
+.maincontainer{
+  float: left;
+  width:100%;
+  height:100%;
+  padding:30% 20%;
+    z-index:-1 !important;
+}
+
+
+
+
+#snapContainer {
+  width: 80%;
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -40%;
+  margin-left: -40%;
+  background: transparent;
+  background-repeat: no-repeat;
+    z-index:1 !important;
+   
+  background-position: center center;
+  opacity: .16;
+   -webkit-background-size:contain;
+   -webkit-transform:scale(1.3);
+               
+}
+
+#snapContainer:before {
+  content:"";
+  display: inline-block;
+  padding-top: 100%;
+}
+
+.touchcontrols{
+
+       border: 1px solid #000;
+    border-radius: 100%;
+    background-color: #555;
+    margin: 0px auto;
+    bottom: 10%;
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    width: 40%;
+    height: 145px;
+    text-align: center;
+    display: none;
+    z-index: 100 !important;
+    box-shadow: 0px 0px 8px 7px #000;
+
+    }
+
+
+
+#targetImageHolder
+{
+   position : absolute;
+    width    : 100%;
+    top      : 0px;
+}
+
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+
+    #snapContainer {
+    width: 60%;
+    -webkit-transform:scale(1.1);
+    overflow: hidden;
+    margin: 0px auto;
+    margin-top:-17%;
+    margin-left: -31.5%;
+    background: transparent;
+    padding-left:5%;
+    opacity: .016;
+    z-index:1;
+    -webkit-background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    }
+    }
+
+    
+
+
+
+
+
+    @media only screen
+    and (min-device-width: 480px)
+    and (max-device-width: 760px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+
+    #snapContainer {
+    width: 40%;
+    -webkit-transform:scale(1.1);
+    overflow: hidden;
+    margin: 0px auto;
+    margin-top:-17%;
+    margin-left: -22%;
+    background: transparent;
+    padding-left:5%;
+    opacity: .16;
+    z-index:10;
+    -webkit-background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    }
+    }
+
+
+   
+
+
+
+/** SNAP CLOSE BUTTON **/
+
+.snap-close {
+    position:absolute;
+    top:3%;
+    left:45%;
+    text-align: center;
+    display: block;
+    z-index: 100 !important;
+  
+}
+
+
+  
+.snap-screenshot {
+   position:absolute;
+   top:88%;
+   bottom:3%;
+   left:5%;
+   text-align: center;
+   display: block;
+   z-index: 100 !important;
+
+   }
+
+@media (orientation: landscape) {
+  
+.snap-close {
+    position:absolute;
+    top:4%;
+    left:45%;
+    text-align: center;
+    display: block;
+  z-index:100;
+}
+
+
+
+.snap-screenshot {
+   position:absolute;
+   top:79%;
+   bottom:5%;
+   left:5%;
+   text-align: center;
+   display: block;
+   z-index: 100 !important;
+
+   }
+  
+}
+
+
+
+
+
+</style>
+
+
+
+<script type="text/javascript">
+
+
+
+var current2DObject=undefined;
+
+  // load google analytics library for reporting your project data
+
+  
+	(function(i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function() {
+			(i[r].q = i[r].q || []).push(arguments);
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m);
+	})(window, document, 'script', 'http://www.google-analytics.com/analytics_debug.js', 'ga');
+
+  // the GA project to report to
+	ga('create', 'UA-80201408-1', {
+			'cookieDomain' : 'none',
+			'storage':'none'
+		});
+	ga('set', 'checkProtocolTask', null); // Disable file protocol checking.
+	ga('set', 'location', "http://www.analyticstester.com/");
+//www.analyticstester.com
+  ga('send','pageview');
+
+  //sends an event (Augmentation click) to GA
+
+	function sendEvent(category, action, label, pageUrl) {
+		
+
+		ga('send', 'event', category, action, label, {
+			'page' : pageUrl
+		});
+
+
+	}
+
+
+	//sends a page view (Project open, Target Views) to GA
+	function sendPageView(page, title) {
+		
+		ga('send', {
+			'hitType' : 'pageview',
+			'page' : page,
+			'title' : title
+		});
+
+	}
+</script>
+
+<style>
+/* for the spinner indeed lol */
+.wrap {
+  position: relative;
+  top: 43%;
+  left: 43%;
+  margin: 0 auto;
+}
+
+
+.body{
+  background-image: url("bg.jpg");
+  width:100% 
+}
+
+
+</style>
+
+
+
+
+
+
+</head>
+
+
+<body>
+
+<div class="maincontainer" id="maincontainer">
+<div id="snapContainer" >
+
+ </div>
+
+
+<div class="touchcontrols" id="touchcontrols">
+
+
+</div>
+
+</div>
+
+
+
+<section  id="scanner" class="intro-section" >
+        <div class="container">
+
+       
+          
+            <div class="row revanimator" >
+
+                <div class="col-xs-12" >
+
+                 <div class="wrap" >
+                     <!--       <div class="wrap1" style="display:table-cell;width:50%;margin:0px auto"><img alt="preloader" src="boxrotate.gif" style="width:auto;text-align:center;" /> </div>-->
+        <div class="loader"></div>
+  <div class="loaderbefore"></div>
+  <div class="circular"></div>
+  <div class="circular another"></div>
+
+</div></div>
+        </div>
+
+         </div>
+    </section> 
+
+
+
+
+<section id="intro1" class="point-section" >
+        <div class="container">
+            <div class="row" >
+
+                <div class="col-xs-12" >
+                  
+          <p style="color:white;font-family:'Source Sans Pro';" ><span id='initMessage'>Please Wait...</span></p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>  
+
+
+<div  class="snap-close" style="display:none;"><img style="width:35px;height:35px;" src="snapclose.png" /></div>
+
+<div  class="snap-screenshot" id="screenshotbutton"  style=""><img style="width:35px;height:35px;" src="img/screenshotbutton.png" /></div>
+
+
+
+
+
+
+
+
+	<script>
+	
+	
+
+
+//loading indicator
+
+
+
+
+
+	</script>
+
+
+	
+
+
+
+
+
+</body>
+</html>
